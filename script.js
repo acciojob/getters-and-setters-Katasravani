@@ -1,41 +1,37 @@
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
+class Person{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    get newname(){
+        return this.name;
+    }
+    set setname(newname){
+        this.name=newname;
 
-  get name() {
-    return this.name;
-  }
+    }
+    
+}
+class Student extends Person{
+    constructor(name,age){
+        super(name,age)
+    }
 
-  set age(age) {
-    this.age = age;
-  }
+    study(){
+        return `${this.name} is studying`;
+    }
 }
 
-class Student extends Person {
-  constructor(name, age) {
-    super(name, age);
-  }
+class Teacher extends Person{
+    constructor(name,age){
+        super(name,age)
+    }
 
-  study() {
-    console.log(`${this.name} is studying.`);
-  }
+    teach(){
+        return `${this.name} is teaching`;
+    }
 }
 
-class Teacher extends Person {
-  constructor(name, age) {
-    super(name, age);
-  }
-
-  teach() {
-    console.log(`${this.name} is teaching.`);
-  }
-}
-
-// Example usage
-const student = new Student("John", 20);
-const teacher = new Teacher("Professor Smith", 35);
-
-student.study(); // Output: John is studying.
-teacher.teach(); // Output: Professor Smith is teaching.
+const user=new Teacher("lalitha",56);
+user.setname="bagyalatha"
+console.log(user.teach());
